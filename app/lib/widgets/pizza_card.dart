@@ -31,8 +31,14 @@ class PizzaCard extends StatelessWidget {
           pizza.description,
         ),
 
-        trailing: Text(
-          "₹${pizza.price}",
+        trailing: ElevatedButton(
+          onPressed: () {
+            // Add to cart function baad mein add karenge
+          },
+          child: Text(
+            "₹${pizza.price}\nAdd",
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
     );
