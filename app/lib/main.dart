@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(const PizzaWalaApp());
@@ -12,17 +13,10 @@ class PizzaWalaApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'PizzaWala',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('🍕 PizzaWala'),
-        ),
-        body: const Center(
-          child: Text(
-            'Welcome to PizzaWala!',
-            style: TextStyle(fontSize: 24),
-          ),
-        ),
+      theme: ThemeData(
+        primarySwatch: Colors.red,
       ),
+      home: const HomeScreen(),
     );
   }
 }
