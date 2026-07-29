@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/pizza_model.dart';
-
+import '../models/cart_model.dart';
+import '../services/cart_service.dart';
 class PizzaCard extends StatelessWidget {
   final Pizza pizza;
 
@@ -33,7 +34,13 @@ class PizzaCard extends StatelessWidget {
 
         trailing: ElevatedButton(
           onPressed: () {
-            // Add to cart function baad mein add karenge
+  CartService.addToCart(
+    CartItem(
+      name: pizza.name,
+      price: pizza.price,
+    ),
+  );
+},
           },
           child: Text(
             "₹${pizza.price}\nAdd",
