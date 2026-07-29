@@ -16,10 +16,12 @@ class PizzaCard extends StatelessWidget {
       margin: const EdgeInsets.all(10),
 
       child: ListTile(
-        leading: const Icon(
-          Icons.local_pizza,
-          size: 40,
-        ),
+        leading: Image.asset(
+  pizza.image,
+  width: 60,
+  height: 60,
+  fit: BoxFit.cover,
+),
 
         title: Text(
           pizza.name,
