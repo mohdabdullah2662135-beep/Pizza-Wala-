@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../data/pizza_data.dart';
+import '../widgets/pizza_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,27 +12,14 @@ class HomeScreen extends StatelessWidget {
         title: const Text("🍕 PizzaWala"),
       ),
 
-      body: Column(
-        children: [
+      body: ListView.builder(
+        itemCount: pizzas.length,
 
-          const SizedBox(height: 20),
-
-          const Text(
-            "Welcome to PizzaWala",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-
-          const SizedBox(height: 20),
-
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text("Order Pizza"),
-          ),
-
-        ],
+        itemBuilder: (context, index) {
+          return PizzaCard(
+            pizza: pizzas[index],
+          );
+        },
       ),
     );
   }
